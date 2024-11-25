@@ -71,7 +71,7 @@
         <!--Item 1-->
         <scene sceneID="zc6-j4-ksH">
             <objects>
-                <viewController storyboardIdentifier="CouponCraftTabViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gVs-bW-ZIO" customClass="CouponCraftTabViewController" customModule="CouponCraft" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CCHomeTabViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gVs-bW-ZIO" customClass="CCHomeTabViewController" customModule="CouponCraft" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yvD-iU-7ki">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

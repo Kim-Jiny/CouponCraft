@@ -56,7 +56,7 @@
 		30BBAA3F2CB509A100A84090 /* BackButtonEmptyTitleNavigationBarBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBAA3E2CB509A100A84090 /* BackButtonEmptyTitleNavigationBarBehavior.swift */; };
 		30BBAA412CB509D100A84090 /* BlackStyleNavigationBarBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBAA402CB509D100A84090 /* BlackStyleNavigationBarBehavior.swift */; };
 		30BBAA492CB5140F00A84090 /* MypageTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBAA462CB5140F00A84090 /* MypageTabViewController.swift */; };
-		30BBAA4F2CB5143F00A84090 /* CreateQRTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBAA4C2CB5143F00A84090 /* CreateQRTabViewController.swift */; };
+		30BBAA4F2CB5143F00A84090 /* CCHomeTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBAA4C2CB5143F00A84090 /* CCHomeTabViewController.swift */; };
 		30BBAA532CB517AA00A84090 /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBAA522CB517AA00A84090 /* StoryboardInstantiable.swift */; };
 		30BBAA552CB517E400A84090 /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30BBAA542CB517E400A84090 /* MainViewController.storyboard */; };
 		30BBAA592CB522FA00A84090 /* AppColors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30BBAA582CB522FA00A84090 /* AppColors.xcassets */; };
@@ -158,7 +158,7 @@
 		30BBAA3E2CB509A100A84090 /* BackButtonEmptyTitleNavigationBarBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonEmptyTitleNavigationBarBehavior.swift; sourceTree = "<group>"; };
 		30BBAA402CB509D100A84090 /* BlackStyleNavigationBarBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackStyleNavigationBarBehavior.swift; sourceTree = "<group>"; };
 		30BBAA462CB5140F00A84090 /* MypageTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageTabViewController.swift; sourceTree = "<group>"; };
-		30BBAA4C2CB5143F00A84090 /* CreateQRTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQRTabViewController.swift; sourceTree = "<group>"; };
+		30BBAA4C2CB5143F00A84090 /* CCHomeTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCHomeTabViewController.swift; sourceTree = "<group>"; };
 		30BBAA522CB517AA00A84090 /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
 		30BBAA542CB517E400A84090 /* MainViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainViewController.storyboard; sourceTree = "<group>"; };
 		30BBAA582CB522FA00A84090 /* AppColors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppColors.xcassets; sourceTree = "<group>"; };
@@ -467,7 +467,7 @@
 				303398D62CDDF99100977E8A /* QRTypesView */,
 				30BBAA2A2CB5038E00A84090 /* MainViewController.swift */,
 				30BBAA542CB517E400A84090 /* MainViewController.storyboard */,
-				30BBAA4C2CB5143F00A84090 /* CreateQRTabViewController.swift */,
+				30BBAA4C2CB5143F00A84090 /* CCHomeTabViewController.swift */,
 				303398DE2CE19EE200977E8A /* ScanQRTabViewController.swift */,
 				30BBAA462CB5140F00A84090 /* MypageTabViewController.swift */,
 				30BBAA5D2CB8FFCE00A84090 /* AppSettingTabViewController.swift */,
@@ -817,7 +817,7 @@
 				303399182CE5F61400977E8A /* AppVersionRepository.swift in Sources */,
 				30BBAA392CB5081800A84090 /* XibInstantiable.swift in Sources */,
 				30BBAA7C2CB9121B00A84090 /* UserDefaultsManager.swift in Sources */,
-				30BBAA4F2CB5143F00A84090 /* CreateQRTabViewController.swift in Sources */,
+				30BBAA4F2CB5143F00A84090 /* CCHomeTabViewController.swift in Sources */,
 				303399142CE4A89700977E8A /* QRDetailView.swift in Sources */,
 				30BBAA492CB5140F00A84090 /* MypageTabViewController.swift in Sources */,
 				30BBAA822CB9131700A84090 /* DefaultRQListRepository.swift in Sources */,
@@ -1033,6 +1033,7 @@
 				DEVELOPMENT_TEAM = HW9XJ9J5M2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CouponCraft/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "쿠크";
 				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Permission is required to access QR images from the gallery.";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Camera permission is required to scan QR images.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Permission is required to save QR images.";
@@ -1067,6 +1068,7 @@
 				DEVELOPMENT_TEAM = HW9XJ9J5M2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CouponCraft/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "쿠크";
 				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Permission is required to access QR images from the gallery.";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Camera permission is required to scan QR images.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Permission is required to save QR images.";

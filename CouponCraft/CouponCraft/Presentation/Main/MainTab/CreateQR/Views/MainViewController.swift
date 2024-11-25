@@ -39,24 +39,28 @@ class MainViewController: UITabBarController, StoryboardInstantiable {
 
     private func setupViews() {
         // 각 ViewController를 xib에서 불러오기
-        let firstVC = CouponCraftTabViewController.instantiateViewController(from: UIStoryboard(name: "MainViewController", bundle: nil))
-        firstVC.tabBarItem = UITabBarItem(title: NSLocalizedString("Create QR", comment: "Create QR"), image: UIImage(systemName: "plus.square"), tag: 0)
+        let firstVC = CCHomeTabViewController.instantiateViewController(from: UIStoryboard(name: "MainViewController", bundle: nil))
+        firstVC.tabBarItem = UITabBarItem(title: NSLocalizedString("Home", comment: "Home탭"), image: UIImage(systemName: "house.fill"), tag: 0)
         firstVC.viewModel = viewModel
         
         let secondVC = ScanQRTabViewController.instantiateViewController(from: UIStoryboard(name: "MainViewController", bundle: nil))
-        secondVC.tabBarItem = UITabBarItem(title: NSLocalizedString("QR Scan", comment: "QR Scan"), image: UIImage(systemName: "qrcode.viewfinder"), tag: 1)
+        secondVC.tabBarItem = UITabBarItem(title: NSLocalizedString("Community", comment: "Community탭"), image: UIImage(systemName: "ticket"), tag: 1)
         secondVC.viewModel = viewModel
         
+        let fifthVC = MypageTabViewController.instantiateViewController(from: UIStoryboard(name: "MainViewController", bundle: nil))
+        fifthVC.tabBarItem = UITabBarItem(title: NSLocalizedString("Scan", comment: "Scan탭"), image: UIImage(systemName: "barcode.viewfinder"), tag: 5)
+        fifthVC.viewModel = viewModel
+        
         let thirdVC = MypageTabViewController.instantiateViewController(from: UIStoryboard(name: "MainViewController", bundle: nil))
-        thirdVC.tabBarItem = UITabBarItem(title: NSLocalizedString("My QR", comment: "My QR"), image: UIImage(systemName: "star.square.on.square"), tag: 2)
+        thirdVC.tabBarItem = UITabBarItem(title: NSLocalizedString("Create", comment: "Create탭"), image: UIImage(systemName: "plus.diamond.fill"), tag: 2)
         thirdVC.viewModel = viewModel
         
         let fourthVC = AppSettingTabViewController.instantiateViewController(from: UIStoryboard(name: "MainViewController", bundle: nil))
-        fourthVC.tabBarItem = UITabBarItem(title: NSLocalizedString("Settings", comment: "Settings"), image: UIImage(systemName: "gearshape"), tag: 3)
+        fourthVC.tabBarItem = UITabBarItem(title: NSLocalizedString("My", comment: "My탭"), image: UIImage(systemName: "person.fill"), tag: 3)
         fourthVC.viewModel = viewModel
         
         // 뷰 컨트롤러들을 탭 바에 추가
-        self.viewControllers = [firstVC, secondVC, fourthVC, thirdVC]
+        self.viewControllers = [firstVC, secondVC, thirdVC, fifthVC, fourthVC]
         self.tabBar.tintColor = .speedMain0
         self.tabBar.backgroundColor = .speedMain3
         

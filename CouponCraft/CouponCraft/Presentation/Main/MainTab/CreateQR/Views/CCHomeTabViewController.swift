@@ -8,7 +8,7 @@
 import UIKit
 import GoogleMobileAds
 
-class CouponCraftTabViewController: UIViewController, StoryboardInstantiable {
+class CCHomeTabViewController: UIViewController, StoryboardInstantiable {
     var viewModel: MainViewModel?
     
     @IBOutlet weak var mainStackView: UIStackView!
@@ -146,7 +146,7 @@ class CouponCraftTabViewController: UIViewController, StoryboardInstantiable {
 }
 
 
-extension CouponCraftTabViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension CCHomeTabViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16) // 원하는 마진 설정
@@ -180,7 +180,7 @@ extension CouponCraftTabViewController: UICollectionViewDelegate, UICollectionVi
 }
 
 
-extension CouponCraftTabViewController: QRTypeDelegate {
+extension CCHomeTabViewController: QRTypeDelegate {
     func shareImage() {
         
         guard let imageData = self.viewModel?.CouponCraftItem.value?.qrImageData, let qrImage = UIImage(data: imageData) else {
@@ -329,7 +329,7 @@ extension CouponCraftTabViewController: QRTypeDelegate {
     }
 }
 
-extension CouponCraftTabViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+extension CCHomeTabViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     // 이미지가 선택되었을 때 호출되는 델리게이트 메서드
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         picker.dismiss(animated: true, completion: nil)

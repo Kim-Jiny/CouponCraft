@@ -463,6 +463,9 @@
         }
       }
     },
+    "Community" : {
+      "comment" : "Community탭"
+    },
     "Contact Us" : {
       "localizations" : {
         "de" : {
@@ -503,8 +506,12 @@
         }
       }
     },
+    "Create" : {
+      "comment" : "Create탭"
+    },
     "Create QR" : {
       "comment" : "Create QR",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -828,6 +835,9 @@
         }
       }
     },
+    "Home" : {
+      "comment" : "Home탭"
+    },
     "Latest version on store: %@" : {
       "localizations" : {
         "de" : {
@@ -1028,8 +1038,12 @@
         }
       }
     },
+    "My" : {
+      "comment" : "My탭"
+    },
     "My QR" : {
       "comment" : "My QR",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1439,6 +1453,7 @@
     },
     "QR Scan" : {
       "comment" : "QR Scan",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1724,6 +1739,9 @@
         }
       }
     },
+    "Scan" : {
+      "comment" : "Scan탭"
+    },
     "Scan from Gallery" : {
       "localizations" : {
         "de" : {
@@ -1848,6 +1866,7 @@
     },
     "Settings" : {
       "comment" : "Settings",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
