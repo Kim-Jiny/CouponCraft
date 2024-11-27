@@ -19,12 +19,30 @@ final class AppFlowCoordinator {
     }
 
     func start() {
-        let flow = makeMainCoordinator(navigationController: navigationController)
-        flow.start()
+        if isUserLoggedIn() {
+            // 유저가 로그인 되어있으면 MainCoordinator 시작
+            let flow = makeMainCoordinator(navigationController: navigationController)
+            flow.start()
+        } else {
+            // 로그인되지 않았다면 SignInCoordinator 시작
+            let flow = makeSignInCoordinator(navigationController: navigationController)
+            flow.start()
+        }
+    }
+    
+    private func isUserLoggedIn() -> Bool {
+        // 로그인 여부 확인 로직 추가
+        // 예를 들어, UserDefaults, Keychain, 또는 세션 데이터를 확인할 수 있음
+        // return UserDefaults.standard.bool(forKey: "isLoggedIn")
+        return false
     }
     
     func makeMainCoordinator(navigationController: UINavigationController) -> MainCoordinator {
         MainCoordinator(navigationController: navigationController, dependencies: self)
+    }
+    
+    func makeSignInCoordinator(navigationController: UINavigationController) -> SignInCoordinator {
+        SignInCoordinator(navigationController: navigationController, dependencies: self)
     }
 }
 
@@ -114,5 +132,19 @@ extension AppFlowCoordinator: MainCoordinatorDependencies {
     
     private func makePhotoLibraryPermissionDataSource() -> PhotoLibraryPermissionDataSource {
         PhotoLibraryPermissionDataSource()
+    }
+}
+
+extension AppFlowCoordinator: SignInCoordinatorDependencies {
+    func makeSigninViewController(actions: SigninViewModelActions) -> SignInMainViewController {
+        SignInMainViewController.create(with: makeSignViewModel(actions: actions))
+    }
+    
+    func makeSignViewModel(actions: SigninViewModelActions) -> SigninViewModel {
+        DefaultSigninViewModel(
+            permissionUseCase: makePermissionUseCase(),
+            fetchAppVersionUseCase: makeFetchAppVersionUseCase(),
+            actions: actions
+        )
     }
 }

@@ -37,6 +37,16 @@
 		3033991C2CE71D8400977E8A /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 3033991B2CE71D8400977E8A /* Localizable.xcstrings */; };
 		30A2B1C22CE7B06600063D92 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 30A2B1C12CE7B06600063D92 /* SnapKit */; };
 		30A2B1C92CE8C13B00063D92 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30A2B1CB2CE8C13B00063D92 /* InfoPlist.strings */; };
+		30A52E732CF6C19800724934 /* SignInMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A52E712CF6C19800724934 /* SignInMainViewController.swift */; };
+		30A52E742CF6C19800724934 /* SignInMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30A52E722CF6C19800724934 /* SignInMainViewController.xib */; };
+		30A52E772CF6D9F000724934 /* UserTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A52E762CF6D9F000724934 /* UserTextFieldView.swift */; };
+		30A52E792CF6DA0000724934 /* UserTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30A52E782CF6DA0000724934 /* UserTextFieldView.xib */; };
+		30A52E7B2CF6E11200724934 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A52E7A2CF6E11200724934 /* PaddingLabel.swift */; };
+		30A52E7D2CF6E6B400724934 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A52E7C2CF6E6B400724934 /* UIStackView+Extensions.swift */; };
+		30A52E802CF6E7FF00724934 /* SignInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A52E7F2CF6E7FF00724934 /* SignInCoordinator.swift */; };
+		30A52E832CF6E86200724934 /* SigninViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A52E822CF6E86200724934 /* SigninViewModel.swift */; };
+		30A52E862CF6F6B800724934 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 30A52E852CF6F6B800724934 /* GoogleSignInSwift */; };
+		30A52E892CF701EB00724934 /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 30A52E882CF701EB00724934 /* KakaoSDK */; };
 		30BBA9F22CB501E300A84090 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBA9F12CB501E300A84090 /* AppDelegate.swift */; };
 		30BBA9F42CB501E300A84090 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBA9F32CB501E300A84090 /* SceneDelegate.swift */; };
 		30BBA9FB2CB501E400A84090 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30BBA9FA2CB501E400A84090 /* Assets.xcassets */; };
@@ -135,6 +145,14 @@
 		3033991B2CE71D8400977E8A /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		30A2B1CA2CE8C13B00063D92 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		30A2B1CC2CE8C2F900063D92 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		30A52E712CF6C19800724934 /* SignInMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInMainViewController.swift; sourceTree = "<group>"; };
+		30A52E722CF6C19800724934 /* SignInMainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInMainViewController.xib; sourceTree = "<group>"; };
+		30A52E762CF6D9F000724934 /* UserTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTextFieldView.swift; sourceTree = "<group>"; };
+		30A52E782CF6DA0000724934 /* UserTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTextFieldView.xib; sourceTree = "<group>"; };
+		30A52E7A2CF6E11200724934 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		30A52E7C2CF6E6B400724934 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
+		30A52E7F2CF6E7FF00724934 /* SignInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCoordinator.swift; sourceTree = "<group>"; };
+		30A52E822CF6E86200724934 /* SigninViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewModel.swift; sourceTree = "<group>"; };
 		30BBA9EE2CB501E300A84090 /* CouponCraft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CouponCraft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30BBA9F12CB501E300A84090 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30BBA9F32CB501E300A84090 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -196,7 +214,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				30E4AE5A2CEB1F2600B6C503 /* FirebaseDatabase in Frameworks */,
+				30A52E892CF701EB00724934 /* KakaoSDK in Frameworks */,
 				30E4AE4C2CEAD42800B6C503 /* GoogleMobileAds in Frameworks */,
+				30A52E862CF6F6B800724934 /* GoogleSignInSwift in Frameworks */,
 				30A2B1C22CE7B06600063D92 /* SnapKit in Frameworks */,
 				30E4AE582CEB1F2600B6C503 /* FirebaseCrashlytics in Frameworks */,
 				30E4AE562CEB1F2600B6C503 /* FirebaseCore in Frameworks */,
@@ -288,6 +308,52 @@
 			path = QRDetailView;
 			sourceTree = "<group>";
 		};
+		30A52E6A2CF5656500724934 /* Sign */ = {
+			isa = PBXGroup;
+			children = (
+				30A52E812CF6E85200724934 /* ViewModels */,
+				30A52E7E2CF6E7EF00724934 /* Coordinator */,
+				30A52E752CF6D9D200724934 /* Views */,
+				30A52E6C2CF5657700724934 /* SignUp */,
+				30A52E712CF6C19800724934 /* SignInMainViewController.swift */,
+				30A52E722CF6C19800724934 /* SignInMainViewController.xib */,
+			);
+			path = Sign;
+			sourceTree = "<group>";
+		};
+		30A52E6C2CF5657700724934 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		30A52E752CF6D9D200724934 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				30A52E762CF6D9F000724934 /* UserTextFieldView.swift */,
+				30A52E782CF6DA0000724934 /* UserTextFieldView.xib */,
+				30A52E7A2CF6E11200724934 /* PaddingLabel.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		30A52E7E2CF6E7EF00724934 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				30A52E7F2CF6E7FF00724934 /* SignInCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		30A52E812CF6E85200724934 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				30A52E822CF6E86200724934 /* SigninViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		30BBA9E52CB501E300A84090 = {
 			isa = PBXGroup;
 			children = (
@@ -354,6 +420,7 @@
 		30BBAA242CB5030000A84090 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				30A52E6A2CF5656500724934 /* Sign */,
 				30BBAA2F2CB5056A00A84090 /* Utils */,
 				30BBAA292CB5034A00A84090 /* Main */,
 			);
@@ -425,6 +492,7 @@
 				30BBAA3B2CB5096F00A84090 /* UIViewController+AddBehaviors.swift */,
 				303398DC2CDDFD2A00977E8A /* UIView+Extensions.swift */,
 				30E4AE722CEC32AE00B6C503 /* UIColor+Extensions.swift */,
+				30A52E7C2CF6E6B400724934 /* UIStackView+Extensions.swift */,
 			);
 			path = Extenstions;
 			sourceTree = "<group>";
@@ -647,6 +715,8 @@
 				30E4AE552CEB1F2600B6C503 /* FirebaseCore */,
 				30E4AE572CEB1F2600B6C503 /* FirebaseCrashlytics */,
 				30E4AE592CEB1F2600B6C503 /* FirebaseDatabase */,
+				30A52E852CF6F6B800724934 /* GoogleSignInSwift */,
+				30A52E882CF701EB00724934 /* KakaoSDK */,
 			);
 			productName = WithRunning;
 			productReference = 30BBA9EE2CB501E300A84090 /* CouponCraft.app */;
@@ -730,6 +800,8 @@
 				30A2B1C02CE7AFDF00063D92 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				30E4AE4A2CEAD42800B6C503 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 				30E4AE522CEB1F2600B6C503 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				30A52E842CF6F6B800724934 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				30A52E872CF701EB00724934 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
 			);
 			productRefGroup = 30BBA9EF2CB501E300A84090 /* Products */;
 			projectDirPath = "";
@@ -751,10 +823,12 @@
 				303398FB2CE328AE00977E8A /* CouponCraftCardType.xib in Resources */,
 				30BBA9FB2CB501E400A84090 /* Assets.xcassets in Resources */,
 				303399112CE482D000977E8A /* MyQRTableViewCell.xib in Resources */,
+				30A52E742CF6C19800724934 /* SignInMainViewController.xib in Resources */,
 				303398DB2CDDFA8000977E8A /* CouponCraftURLType.xib in Resources */,
 				30BBAA592CB522FA00A84090 /* AppColors.xcassets in Resources */,
 				3033991C2CE71D8400977E8A /* Localizable.xcstrings in Resources */,
 				30E4AE512CEB1E4900B6C503 /* GoogleService-Info.plist in Resources */,
+				30A52E792CF6DA0000724934 /* UserTextFieldView.xib in Resources */,
 				30E4AE642CEB2D0800B6C503 /* CouponCraftBetaType.xib in Resources */,
 				30BBAA552CB517E400A84090 /* MainViewController.storyboard in Resources */,
 				303398D02CDDE76800977E8A /* QRTypeCollectionViewCell.xib in Resources */,
@@ -798,11 +872,14 @@
 				30BBAA2E2CB503D500A84090 /* MainViewModel.swift in Sources */,
 				30BBAA372CB5075C00A84090 /* DispatchQueueType.swift in Sources */,
 				30BBAA842CB9137800A84090 /* Cancellable.swift in Sources */,
+				30A52E772CF6D9F000724934 /* UserTextFieldView.swift in Sources */,
+				30A52E732CF6C19800724934 /* SignInMainViewController.swift in Sources */,
 				303398D82CDDFA1E00977E8A /* CouponCraftTypeView.swift in Sources */,
 				30E4AE732CEC32AE00B6C503 /* UIColor+Extensions.swift in Sources */,
 				303399092CE4728400977E8A /* QRItemUseCase.swift in Sources */,
 				303398ED2CE1A93A00977E8A /* CameraPermissionDataSource.swift in Sources */,
 				30BBAA342CB506C300A84090 /* QRTypeItemViewModel.swift in Sources */,
+				30A52E7B2CF6E11200724934 /* PaddingLabel.swift in Sources */,
 				303398F32CE1F60700977E8A /* PhotoLibraryPermissionDataSource.swift in Sources */,
 				30BBAA2B2CB5038E00A84090 /* MainViewController.swift in Sources */,
 				303398EF2CE1EE5A00977E8A /* DownloadImageUseCase.swift in Sources */,
@@ -810,11 +887,14 @@
 				303398EA2CE1A90100977E8A /* QRScannerRepository.swift in Sources */,
 				303399032CE4714100977E8A /* TimestampProvider.swift in Sources */,
 				303398F72CE1F6F800977E8A /* PermissionRepository.swift in Sources */,
+				30A52E7D2CF6E6B400724934 /* UIStackView+Extensions.swift in Sources */,
 				30BBAA8D2CB9166300A84090 /* GetQRListUseCase.swift in Sources */,
 				30E4AE6F2CEB3F2B00B6C503 /* ColorPickerManager.swift in Sources */,
 				303398CF2CDDE76800977E8A /* QRTypeCollectionViewCell.swift in Sources */,
+				30A52E832CF6E86200724934 /* SigninViewModel.swift in Sources */,
 				30BBAA262CB5030C00A84090 /* MainCoordinator.swift in Sources */,
 				303399182CE5F61400977E8A /* AppVersionRepository.swift in Sources */,
+				30A52E802CF6E7FF00724934 /* SignInCoordinator.swift in Sources */,
 				30BBAA392CB5081800A84090 /* XibInstantiable.swift in Sources */,
 				30BBAA7C2CB9121B00A84090 /* UserDefaultsManager.swift in Sources */,
 				30BBAA4F2CB5143F00A84090 /* CCHomeTabViewController.swift in Sources */,
@@ -1033,7 +1113,6 @@
 				DEVELOPMENT_TEAM = HW9XJ9J5M2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CouponCraft/Resources/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "쿠크";
 				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Permission is required to access QR images from the gallery.";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Camera permission is required to scan QR images.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Permission is required to save QR images.";
@@ -1068,7 +1147,6 @@
 				DEVELOPMENT_TEAM = HW9XJ9J5M2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CouponCraft/Resources/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "쿠크";
 				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Permission is required to access QR images from the gallery.";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Camera permission is required to scan QR images.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Permission is required to save QR images.";
@@ -1218,6 +1296,22 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		30A52E842CF6F6B800724934 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+		30A52E872CF701EB00724934 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kakao/kakao-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.23.0;
+			};
+		};
 		30E4AE4A2CEAD42800B6C503 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
@@ -1241,6 +1335,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 30A2B1C02CE7AFDF00063D92 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		30A52E852CF6F6B800724934 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 30A52E842CF6F6B800724934 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+		30A52E882CF701EB00724934 /* KakaoSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 30A52E872CF701EB00724934 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDK;
 		};
 		30E4AE4B2CEAD42800B6C503 /* GoogleMobileAds */ = {
 			isa = XCSwiftPackageProductDependency;

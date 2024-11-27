@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KakaoSDKAuth
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -80,6 +81,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
             // 필요한 로직 수행
 //            navigateToScreen(userId: userId, itemId: itemId)
+        }
+        
+        // 카카오톡 url
+        if (AuthApi.isKakaoTalkLoginUrl(url)) {
+            _ = AuthController.handleOpenUrl(url: url)
         }
     }
     
