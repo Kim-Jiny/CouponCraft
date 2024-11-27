@@ -21,6 +21,7 @@ class SignInMainViewController: UIViewController, XibInstantiable {
     @IBOutlet weak var socialLine: PaddedLabel!
     @IBOutlet weak var socialStackView: UIStackView!
     @IBOutlet weak var signUpLB: UILabel!
+    @IBOutlet weak var signInBottomConstraints: NSLayoutConstraint!
     
     // MARK: - Lifecycle
 
@@ -93,10 +94,52 @@ class SignInMainViewController: UIViewController, XibInstantiable {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapGesture.cancelsTouchesInView = false  // 다른 터치 이벤트가 막히지 않게 설정
         view.addGestureRecognizer(tapGesture)
+        
+        
+        // 키보드 상태 감지 노티피케이션 등록
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow(_:)),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide(_:)),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
+    }
+    
+    deinit {
+        // 노티피케이션 해제
+        NotificationCenter.default.removeObserver(self)
     }
     
     @objc private func dismissKeyboard() {
         view.endEditing(true)  // 키보드를 닫는다
+    }
+    
+    // 키보드가 올라올 때
+    @objc private func keyboardWillShow(_ notification: Notification) {
+        if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
+            let keyboardHeight = keyboardFrame.height
+            
+            // 하단 Constraint 업데이트
+            signInBottomConstraints.constant = keyboardHeight + 16 // 필요하면 여백 추가
+            UIView.animate(withDuration: 0.3) {
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
+    
+    // 키보드가 내려갈 때
+    @objc private func keyboardWillHide(_ notification: Notification) {
+        // 하단 Constraint 초기화
+        signInBottomConstraints.constant = 30 // 기본 여백으로 복원
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
     }
     
     private func setupSocialLogin() {

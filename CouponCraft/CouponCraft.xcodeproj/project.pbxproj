@@ -315,6 +315,7 @@
 				30A52E7E2CF6E7EF00724934 /* Coordinator */,
 				30A52E752CF6D9D200724934 /* Views */,
 				30A52E6C2CF5657700724934 /* SignUp */,
+				30A52E8A2CF70E8F00724934 /* SignIn */,
 				30A52E712CF6C19800724934 /* SignInMainViewController.swift */,
 				30A52E722CF6C19800724934 /* SignInMainViewController.xib */,
 			);
@@ -352,6 +353,13 @@
 				30A52E822CF6E86200724934 /* SigninViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		30A52E8A2CF70E8F00724934 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SignIn;
 			sourceTree = "<group>";
 		};
 		30BBA9E52CB501E300A84090 = {

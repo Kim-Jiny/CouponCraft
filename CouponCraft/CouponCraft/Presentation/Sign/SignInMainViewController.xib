@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="enterBtn" destination="vkL-pi-QNO" id="lvC-cW-yh4"/>
                 <outlet property="mainStackView" destination="Lp8-Uo-YhR" id="iSo-Sf-wJa"/>
+                <outlet property="signInBottomConstraints" destination="hwg-XN-e2s" id="LuB-ec-RSz"/>
                 <outlet property="signInMainView" destination="X7U-zv-579" id="fcK-1s-jgb"/>
                 <outlet property="signUpLB" destination="WuW-t4-x65" id="GuO-yz-eTb"/>
                 <outlet property="socialLine" destination="G0w-vd-0a6" id="zO1-R1-tVc"/>
