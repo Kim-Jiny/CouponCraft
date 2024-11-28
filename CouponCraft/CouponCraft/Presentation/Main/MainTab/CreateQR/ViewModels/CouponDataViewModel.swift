@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-struct QRTypeItemViewModel: Equatable {
+struct CouponDataViewModel: Equatable {
     typealias Identifier = String
     let id: Identifier
     let title: String
@@ -17,7 +17,7 @@ struct QRTypeItemViewModel: Equatable {
     let qrType: CreateType
 }
 
-extension QRTypeItemViewModel {
+extension CouponDataViewModel {
 
     init(qrType: QRTypeItem) {
         self.id = qrType.id

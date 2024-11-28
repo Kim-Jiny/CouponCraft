@@ -19,15 +19,17 @@ final class AppFlowCoordinator {
     }
 
     func start() {
-        if isUserLoggedIn() {
-            // 유저가 로그인 되어있으면 MainCoordinator 시작
-            let flow = makeMainCoordinator(navigationController: navigationController)
-            flow.start()
-        } else {
-            // 로그인되지 않았다면 SignInCoordinator 시작
-            let flow = makeSignInCoordinator(navigationController: navigationController)
-            flow.start()
-        }
+        let flow = makeMainCoordinator(navigationController: navigationController)
+        flow.start()
+//        if isUserLoggedIn() {
+//            // 유저가 로그인 되어있으면 MainCoordinator 시작
+//            let flow = makeMainCoordinator(navigationController: navigationController)
+//            flow.start()
+//        } else {
+//            // 로그인되지 않았다면 SignInCoordinator 시작
+//            let flow = makeSignInCoordinator(navigationController: navigationController)
+//            flow.start()
+//        }
     }
     
     private func isUserLoggedIn() -> Bool {

@@ -243,7 +243,7 @@ class SignInMainViewController: UIViewController, XibInstantiable {
             self.signInStackView.isHidden = true
         }) { _ in
             self.view.layoutIfNeeded()
-            UIView.animate(withDuration: 0.3, animations: {
+            UIView.animate(withDuration: 0.2, animations: {
                 self.signUpStackView.alpha = 1
                 self.signUpStackView.isHidden = false
             }) { _ in
@@ -258,7 +258,7 @@ class SignInMainViewController: UIViewController, XibInstantiable {
             self.signUpStackView.isHidden = true
         }) { _ in
             self.view.layoutIfNeeded()
-            UIView.animate(withDuration: 0.3, animations: {
+            UIView.animate(withDuration: 0.2, animations: {
                 self.signInStackView.alpha = 1
                 self.signInStackView.isHidden = false
             }) { _ in

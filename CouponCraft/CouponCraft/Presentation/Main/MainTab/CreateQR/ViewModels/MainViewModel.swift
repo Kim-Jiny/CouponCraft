@@ -38,7 +38,7 @@ protocol MainViewModelInput {
 
 // Output 프로토콜: 뷰모델에서 뷰로 전달될 데이터들
 protocol MainViewModelOutput {
-    var typeItems: Observable<[QRTypeItemViewModel]> { get }
+    var typeItems: Observable<[CouponDataViewModel]> { get }
     var myQRItems: Observable<[QRItem]> { get }
     var error: Observable<String> { get }
     var scannedResult: Observable<String> { get }
@@ -70,7 +70,7 @@ final class DefaultMainViewModel: MainViewModel {
     private var ListLoadTask: Cancellable? { willSet { ListLoadTask?.cancel() } } // QR 항목 로딩을 위한 Cancellable 객체
     
     // MARK: - Output (출력 프로퍼티)
-    let typeItems: Observable<[QRTypeItemViewModel]> = Observable([]) // QR 항목 뷰모델 리스트
+    let typeItems: Observable<[CouponDataViewModel]> = Observable([]) // QR 항목 뷰모델 리스트
     let myQRItems: Observable<[QRItem]> = Observable([]) // QR 항목 데이터
     let error: Observable<String> = Observable("") // 오류 메시지
     let scannedResult: Observable<String> = Observable("") // 스캔된 결과
@@ -122,7 +122,7 @@ final class DefaultMainViewModel: MainViewModel {
     
     // QR 항목 뷰모델로 변환하여 typeItems에 설정
     private func fetchList(_ qrTypes: [QRTypeItem]) {
-        typeItems.value = qrTypes.map(QRTypeItemViewModel.init)
+        typeItems.value = qrTypes.map(CouponDataViewModel.init)
     }
     
     func addMyQR(_ item: QRItem?) {

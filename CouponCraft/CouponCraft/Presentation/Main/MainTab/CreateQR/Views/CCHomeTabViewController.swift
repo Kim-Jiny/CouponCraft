@@ -13,8 +13,13 @@ class CCHomeTabViewController: UIViewController, StoryboardInstantiable {
     
     @IBOutlet weak var mainStackView: UIStackView!
     @IBOutlet weak var adView: UIView!
-    @IBOutlet weak var qrTypeCollectionView: UICollectionView!
-    @IBOutlet weak var qrTypeView: UIView!
+    @IBOutlet weak var contentsScrollView: UIScrollView!
+    @IBOutlet weak var contentsScrollStackView: UIStackView!
+    @IBOutlet weak var userInfoCardView: UIStackView!
+    @IBOutlet weak var myCouponStackView: UIStackView!
+    @IBOutlet weak var myCouponCollectionView: UICollectionView!
+    @IBOutlet weak var expirationCouponStackView: UIStackView!
+    @IBOutlet weak var expirationCouponCollectionView: UICollectionView!
     
     var typeView: CouponCraftTypeView? = nil
     private var isFirstSelectionDone = false
@@ -30,45 +35,32 @@ class CCHomeTabViewController: UIViewController, StoryboardInstantiable {
         setupAdView()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        guard !isFirstSelectionDone && qrTypeCollectionView.numberOfItems(inSection: 0) > 0 else { return }
-        let firstIndexPath = IndexPath(item: 0, section: 0)
-        qrTypeCollectionView.selectItem(at: firstIndexPath, animated: false, scrollPosition: .top)
-        qrTypeCollectionView.delegate?.collectionView?(qrTypeCollectionView, didSelectItemAt: firstIndexPath)
-        isFirstSelectionDone = true
+        contentsScrollStackView.layer.cornerRadius = 30
+        userInfoCardView.layer.cornerRadius = 20
     }
+    
     
     private func setupCV() {
         self.navigationController?.navigationBar.isHidden = true
-        self.qrTypeCollectionView.delegate = self
-        self.qrTypeCollectionView.dataSource = self
+        self.myCouponCollectionView.delegate = self
+        self.myCouponCollectionView.dataSource = self
+        self.expirationCouponCollectionView.delegate = self
+        self.expirationCouponCollectionView.dataSource = self
         
-        qrTypeCollectionView.register(UINib(nibName: QRTypeCollectionViewCell.id, bundle: .main), forCellWithReuseIdentifier: QRTypeCollectionViewCell.id)
+        myCouponCollectionView.register(UINib(nibName: MyTicketCollectionViewCell.id, bundle: .main), forCellWithReuseIdentifier: MyTicketCollectionViewCell.id)
+        expirationCouponCollectionView.register(UINib(nibName: MyTicketCollectionViewCell.id, bundle: .main), forCellWithReuseIdentifier: MyTicketCollectionViewCell.id)
     }
     
     private func setupAdView() {
         AdmobManager.shared.setMainBanner(adView, self, .main)
     }
-     
-    private func selecteTypeView(_ qrType: QRTypeItemViewModel) {
-        qrTypeView.subviews.forEach {
-            $0.removeFromSuperview()
-        }
-        
-        typeView = getTypeClass(qrType.qrType)
-        guard let typeView = self.typeView else { return }
-        typeView.delegate = self
-        qrTypeView.addSubview(typeView)
-        typeView.snp.makeConstraints {
-            $0.top.bottom.leading.trailing.equalToSuperview()
-        }
-        
-        typeView.layoutIfNeeded()
-        typeView.roundTopCorners(cornerRadius: 30)
-        typeView.backgroundColor = .speedMain3
-    }
-    
+         
     private func bind(to viewModel: MainViewModel) {
         viewModel.typeItems.observe(on: self) { [weak self] _ in self?.updateItems() }
         
@@ -88,26 +80,15 @@ class CCHomeTabViewController: UIViewController, StoryboardInstantiable {
                 }
             })
         }
-        viewModel.CouponCraftItem.observe(on: self) { qritem in
-            if let imgData = qritem?.qrImageData, let img = UIImage(data: imgData), let existingTypeView = self.qrTypeView.subviews.first(where: { $0 is CouponCraftURLType }) as? CouponCraftURLType {
-                existingTypeView.qrImg.image = img
-                existingTypeView.qrStackView.isHidden = false
-            } else {
-                print("typeView가 qrTypeView의 서브뷰에 없습니다.")
-            }
+        viewModel.CouponCraftItem.observe(on: self) { ccItems in
+            
         }
         
-//        viewModel.selectedQRColor.observe(on: self) { selectedColor in
-//            <#code#>
-//        }
-//        
-//        viewModel.selectedBackColor.observe(on: self) { selectedColor in
-//            <#code#>
-//        }
     }
     
     private func updateItems() {
-        self.qrTypeCollectionView.reloadData()
+        self.myCouponCollectionView.reloadData()
+        self.expirationCouponCollectionView.reloadData()
     }
     
     private func showSaveAlert() {
@@ -153,29 +134,18 @@ extension CCHomeTabViewController: UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if collectionView === myCouponCollectionView {
+            return viewModel?.typeItems.value.count ?? 0
+        }else if collectionView === expirationCouponCollectionView {
+            return viewModel?.typeItems.value.count ?? 0
+        }
         return viewModel?.typeItems.value.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: QRTypeCollectionViewCell.id, for: indexPath) as? QRTypeCollectionViewCell, let viewModel = viewModel else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyTicketCollectionViewCell.id, for: indexPath) as? MyTicketCollectionViewCell, let viewModel = viewModel else { return UICollectionViewCell() }
         cell.fill(with: viewModel.typeItems.value[indexPath.row])
         return cell
-    }
-    
-    
-    // 셀이 선택되었을 때 호출
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as? QRTypeCollectionViewCell
-        cell?.setSelectedAppearance(true) // 선택된 상태 테두리 설정
-        if let viewModel = viewModel {
-            selecteTypeView(viewModel.typeItems.value[indexPath.row])
-        }
-    }
-
-    // 셀이 선택 해제되었을 때 호출
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as? QRTypeCollectionViewCell
-        cell?.setSelectedAppearance(false) // 선택 해제된 상태 테두리 제거
     }
 }
 
