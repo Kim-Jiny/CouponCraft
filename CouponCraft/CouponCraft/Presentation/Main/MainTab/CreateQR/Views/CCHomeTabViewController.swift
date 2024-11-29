@@ -111,19 +111,7 @@ class CCHomeTabViewController: UIViewController, StoryboardInstantiable {
         }))
         present(alert, animated: true)
     }
-    
-    func getTypeClass(_ type: CreateType) -> CouponCraftTypeView {
-        switch type {
-        case .url:
-            return CouponCraftURLType()
-        case .card:
-            return CouponCraftCardType()
-        case .menu:
-            return CouponCraftBetaType()
-        case .other:
-            return CouponCraftCardType()
-        }
-    }
+
 }
 
 

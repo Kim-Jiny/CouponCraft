@@ -46,13 +46,13 @@ class ScanQRTabViewController: UIViewController, StoryboardInstantiable, UIImage
     }
     
     private func setupView() {
-        bottomView.backgroundColor = .speedMain3
+        bottomView.backgroundColor = .speedMain4
         bottomView.roundTopCorners(cornerRadius: 30)
         
         photoBtn.setTitle(NSLocalizedString("Scan from Gallery", comment: ""), for: .normal)
         photoBtn.layer.cornerRadius = 10
         photoBtn.layer.borderWidth = 2.0
-        photoBtn.layer.borderColor = UIColor.speedMain2.cgColor
+        photoBtn.layer.borderColor = UIColor.speedMain0.cgColor
     }
     
     private func setupCameraView() {

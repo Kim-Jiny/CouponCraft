@@ -52,7 +52,7 @@ class AppSettingTabViewController: UIViewController, StoryboardInstantiable, MFM
                         // 최신 버전인 경우
                         self?.newAppVersion.isHidden = false
                         self?.newAppVersion.font = .systemFont(ofSize: 10)
-                        self?.newAppVersion.textColor = .speedMain2
+                        self?.newAppVersion.textColor = .speedMain0
                         self?.newAppVersion.text = NSLocalizedString("This is the latest version.", comment: "")
                         
                         self?.appUpdateView.isHidden = true

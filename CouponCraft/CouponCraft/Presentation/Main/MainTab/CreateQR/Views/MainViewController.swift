@@ -43,11 +43,11 @@ class MainViewController: UITabBarController, StoryboardInstantiable {
         firstVC.tabBarItem = UITabBarItem(title: NSLocalizedString("Home", comment: "Home탭"), image: UIImage(systemName: "house.fill"), tag: 0)
         firstVC.viewModel = viewModel
         
-        let secondVC = ScanQRTabViewController.instantiateViewController(from: UIStoryboard(name: "MainViewController", bundle: nil))
+        let secondVC = CommunityTabViewController.instantiateViewController(from: UIStoryboard(name: "MainViewController", bundle: nil))
         secondVC.tabBarItem = UITabBarItem(title: NSLocalizedString("Community", comment: "Community탭"), image: UIImage(systemName: "ticket"), tag: 1)
         secondVC.viewModel = viewModel
         
-        let fifthVC = MypageTabViewController.instantiateViewController(from: UIStoryboard(name: "MainViewController", bundle: nil))
+        let fifthVC = ScanQRTabViewController.instantiateViewController(from: UIStoryboard(name: "MainViewController", bundle: nil))
         fifthVC.tabBarItem = UITabBarItem(title: NSLocalizedString("Scan", comment: "Scan탭"), image: UIImage(systemName: "barcode.viewfinder"), tag: 5)
         fifthVC.viewModel = viewModel
         
@@ -60,7 +60,7 @@ class MainViewController: UITabBarController, StoryboardInstantiable {
         fourthVC.viewModel = viewModel
         
         // 뷰 컨트롤러들을 탭 바에 추가
-        self.viewControllers = [firstVC, secondVC, thirdVC, fifthVC, fourthVC]
+        self.viewControllers = [firstVC, thirdVC, fifthVC, fourthVC]
         self.tabBar.tintColor = .speedMain0
         self.tabBar.backgroundColor = .speedMain4
         
