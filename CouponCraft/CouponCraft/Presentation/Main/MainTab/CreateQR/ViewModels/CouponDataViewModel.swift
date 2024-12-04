@@ -9,22 +9,38 @@ import Foundation
 import UIKit
 
 struct CouponDataViewModel: Equatable {
-    typealias Identifier = String
-    let id: Identifier
+    
+    let id: String
+    let brand: String
+    let brandImageURL: URL?
     let title: String
-    let titleImage: UIImage?
-    let detailImage: UIImage?
-    let qrType: CreateType
-}
+    let contents: String
+    let providerName: String
+    let providerID: String
+    let couponTitle: String
+    let createdDate: String
+    let expirationDate: String
+    let couponData: String
+    let isEnable: Bool
 
-extension CouponDataViewModel {
+    init(from coupon: CouponItem) {
+        self.id = coupon.id
+        self.brand = coupon.brand
+        self.title = coupon.title
+        self.contents = coupon.contents
+        self.providerName = coupon.providerName
+        self.providerID = coupon.providerID
+        self.couponTitle = coupon.couponTitle
+        self.couponData = coupon.couponData
+        self.isEnable = coupon.isEnable
 
-    init(qrType: QRTypeItem) {
-        self.id = qrType.id
-        self.title = qrType.title ?? "unnkown"
-        self.titleImage = qrType.titleImage
-        self.detailImage = qrType.detailImage
-        self.qrType = qrType.type
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .none
+        self.createdDate = dateFormatter.string(from: Date(timeIntervalSince1970: coupon.createdDate))
+        self.expirationDate = dateFormatter.string(from: Date(timeIntervalSince1970: coupon.expirationDate))
+
+        // URL만 전달
+        self.brandImageURL = URL(string: coupon.brandImg)
     }
-
 }

@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QRDetailView" customModule="CreateQR" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QRDetailView" customModule="CouponCraft" customModuleProvider="target">
             <connections>
                 <outlet property="backDarkView" destination="pzK-Vo-w4s" id="Dlm-du-9tS"/>
                 <outlet property="backView" destination="7ne-7t-DR3" id="tZF-VP-sW1"/>
@@ -73,9 +73,6 @@
                                     <color key="tintColor" name="SpeedMain0"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" title="공유하기"/>
-                                    <connections>
-                                        <action selector="shareBtn:" destination="-1" eventType="touchUpInside" id="9sQ-U9-NMz"/>
-                                    </connections>
                                 </button>
                             </subviews>
                             <constraints>
@@ -92,9 +89,6 @@
                                     <color key="tintColor" name="SpeedMain0"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" title="QR 읽기"/>
-                                    <connections>
-                                        <action selector="readBtn:" destination="-1" eventType="touchUpInside" id="Ie5-HD-hwq"/>
-                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qC8-4M-CqE">
                                     <rect key="frame" x="136.66666666666666" y="0.0" width="116.33333333333334" height="40"/>
@@ -102,9 +96,6 @@
                                     <color key="tintColor" name="SpeedMain0"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" title="삭제"/>
-                                    <connections>
-                                        <action selector="removeBtn:" destination="-1" eventType="touchUpInside" id="gCF-yq-hPb"/>
-                                    </connections>
                                 </button>
                             </subviews>
                             <constraints>
@@ -152,13 +143,13 @@
     </objects>
     <resources>
         <namedColor name="SpeedMain0">
-            <color red="0.30980392156862746" green="0.46274509803921571" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.10196078431372549" green="0.13725490196078433" blue="0.49411764705882355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="SpeedMain2">
-            <color red="0.5725490196078431" green="0.74509803921568629" blue="0.66274509803921566" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.70196078431372544" green="0.89803921568627454" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="SpeedMain3">
-            <color red="0.77254901960784317" green="0.87058823529411766" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.83921568627450982" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

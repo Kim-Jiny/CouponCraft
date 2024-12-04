@@ -19,17 +19,15 @@ final class AppFlowCoordinator {
     }
 
     func start() {
-        let flow = makeMainCoordinator(navigationController: navigationController)
-        flow.start()
-//        if isUserLoggedIn() {
-//            // 유저가 로그인 되어있으면 MainCoordinator 시작
-//            let flow = makeMainCoordinator(navigationController: navigationController)
-//            flow.start()
-//        } else {
-//            // 로그인되지 않았다면 SignInCoordinator 시작
-//            let flow = makeSignInCoordinator(navigationController: navigationController)
-//            flow.start()
-//        }
+        if isUserLoggedIn() {
+            // 유저가 로그인 되어있으면 MainCoordinator 시작
+            let flow = makeMainCoordinator(navigationController: navigationController)
+            flow.start()
+        } else {
+            // 로그인되지 않았다면 SignInCoordinator 시작
+            let flow = makeSignInCoordinator(navigationController: navigationController)
+            flow.start()
+        }
     }
     
     private func isUserLoggedIn() -> Bool {
@@ -59,19 +57,17 @@ extension AppFlowCoordinator: MainCoordinatorDependencies {
             permissionUseCase: makePermissionUseCase(),
             getQRListUseCase: makeGetQRListUseCase(),
             qrScannerUseCase: makeQRScannerUseCase(),
-            downloadImageUseCase: makeDownloadImageUseCase(),
-            qrItemUseCase: makeQRItemUseCase(),
             fetchAppVersionUseCase: makeFetchAppVersionUseCase(),
             actions: actions
         )
     }
     
-    func makeQRDetailsViewController(qr: QRItem) -> QRDetailViewController {
-        QRDetailViewController.create(with: makeMoviesDetailsViewModel(qr: qr))
+    func makeQRDetailsViewController(qr: CouponDataViewModel) -> QRDetailViewController {
+        QRDetailViewController.create(with: makeQRDetailsViewModel(qr: qr))
     }
     
     
-    func makeMoviesDetailsViewModel(qr: QRItem) -> QRDetailViewModel {
+    func makeQRDetailsViewModel(qr: CouponDataViewModel) -> QRDetailViewModel {
         DefaultQRDetailViewModel(qrData: qr)
     }
     
@@ -89,16 +85,13 @@ extension AppFlowCoordinator: MainCoordinatorDependencies {
         QRScannerUseCaseImpl(repository: makeQRScannerRepository())
     }
     
-    func makeDownloadImageUseCase() -> DownloadImageUseCase {
-        DownloadImageUseCase(repository: makeImageDownloadRepository())
-    }
-    
-    func makeQRItemUseCase() -> QRItemUseCase {
-        QRItemUseCase(repository: makeQRItemRepository())
-    }
-    
     func makeFetchAppVersionUseCase() -> FetchAppVersionUseCase {
         DefaultFetchAppVersionUseCase(repository: makeAppVersionRepository())
+    }
+    
+    func makeSocialLoginUseCase() -> SocialLoginUseCase {
+        DefaultSocialLoginUseCase(userRepository: makeUserRepository(),
+                                  appleLoginRepository: makeAppleLoginRepository())
     }
     
     // MARK: - Repositories
@@ -115,16 +108,16 @@ extension AppFlowCoordinator: MainCoordinatorDependencies {
         QRScannerRepositoryImpl()
     }
     
-    private func makeImageDownloadRepository() -> ImageDownloadRepository {
-        ImageDownloadRepositoryImpl()
-    }
-    
-    private func makeQRItemRepository() -> QRItemRepository {
-        QRItemRepository()
-    }
-    
     private func makeAppVersionRepository() -> AppVersionRepository {
         DefaultAppVersionRepository()
+    }
+    
+    private func makeUserRepository() -> UserRepository {
+        DefaultUserRepository()
+    }
+    
+    private func makeAppleLoginRepository() -> AppleLoginRepository {
+        DefaultAppleLoginRepository()
     }
     
     //MARK: - DataSource
@@ -146,6 +139,7 @@ extension AppFlowCoordinator: SignInCoordinatorDependencies {
         DefaultSigninViewModel(
             permissionUseCase: makePermissionUseCase(),
             fetchAppVersionUseCase: makeFetchAppVersionUseCase(),
+            socialLoginUseCase: makeSocialLoginUseCase(),
             actions: actions
         )
     }

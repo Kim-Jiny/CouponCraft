@@ -170,10 +170,8 @@ class ScanQRTabViewController: UIViewController, StoryboardInstantiable, UIImage
         }
         
         alert.addAction(UIAlertAction(title: NSLocalizedString("Save", comment:"Save"), style: .default, handler: { _ in
-            let qrImg = self.viewModel?.generateQR(from: qrCode, color: .black, backgroundColor: .white, logo: nil, logoStyle: .square)
-            let item = QRItem(title: NSLocalizedString("Untitled", comment:"Untitled"), qrImageData: qrImg?.pngData(), qrType: .other, qrData: qrCode, qrColor: UIColor.black.toHex() ?? "000000FF", backColor: UIColor.white.toHex() ?? "FFFFFFFF", logo: nil, logoStyle: .square)
-            self.viewModel?.addMyQR(item)
-            self.viewModel?.scannedResult.value = ""
+            //TODO: 저장하기 구현해야함.
+            print("저장하기 버튼누름")
         }))
         
         present(alert, animated: true, completion: nil)

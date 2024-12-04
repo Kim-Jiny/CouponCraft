@@ -183,58 +183,14 @@ class SignInMainViewController: UIViewController, XibInstantiable {
     }
     
     @objc private func googleLogin() {
-        GIDSignIn.sharedInstance.signIn(withPresenting: self) { signInResult, error in
-          guard error == nil else { return }
-
-          // If sign in succeeded, display the app's main content View.
-        }
+        self.viewModel.googleLogin(self)
     }
     @objc private func appleLogin() {
-        print("Start sign in")
-        
-        let provider = ASAuthorizationAppleIDProvider()
-        let requset = provider.createRequest()
-        
-        // 사용자에게 제공받을 정보를 선택 (이름 및 이메일) -- 아래 이미지 참고
-        requset.requestedScopes = [.fullName, .email]
-        
-        let controller = ASAuthorizationController(authorizationRequests: [requset])
-        // 로그인 정보 관련 대리자 설정
-        controller.delegate = self
-        // 인증창을 보여주기 위해 대리자 설정
-        controller.presentationContextProvider = self
-        // 요청
-        controller.performRequests()
+        self.viewModel.appleLogin(self)
     }
     
     @objc private func kakaoLogin() {
-        // 카카오톡 실행 가능 여부 확인
-//        if (UserApi.isKakaoTalkLoginAvailable()) {
-            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
-                if let error = error {
-                    print(error)
-                    UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
-                        if let error = error {
-                            print(error)
-                        }
-                        else {
-                            print("loginWithKakaoAccount() success.")
-                            
-                            //do something
-                            _ = oauthToken
-                            
-                            self.viewModel.successLogin()
-                        }
-                    }
-                } else {
-                    print("loginWithKakaoTalk() success.")
-
-                    // 성공 시 동작 구현
-                    _ = oauthToken
-                    self.viewModel.successLogin()
-                }
-            }
-//        }
+        self.viewModel.kakaoLogin(self)
     }
     
     @objc private func signUpTaped() {
@@ -296,58 +252,3 @@ class SignInMainViewController: UIViewController, XibInstantiable {
     }
 }
 
-
-extension SignInMainViewController: ASAuthorizationControllerPresentationContextProviding {
-    // 인증창을 보여주기 위한 메서드 (인증창을 보여 줄 화면을 설정)
-    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
-        self.view.window ?? UIWindow()
-    }
-}
-
-extension SignInMainViewController: ASAuthorizationControllerDelegate {
-    
-    // 로그인 실패 시
-    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: any Error) {
-        print("로그인 실패", error.localizedDescription)
-    }
-    
-    // Apple ID 로그인에 성공한 경우, 사용자의 인증 정보를 확인하고 필요한 작업을 수행합니다
-    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
-        switch authorization.credential {
-        case let appleIdCredential as ASAuthorizationAppleIDCredential:
-            let userIdentifier = appleIdCredential.user
-            let fullName = appleIdCredential.fullName
-            let email = appleIdCredential.email
-            
-            let identityToken = appleIdCredential.identityToken
-            let authorizationCode = appleIdCredential.authorizationCode
-            
-            print("Apple ID 로그인에 성공하였습니다.")
-            print("사용자 ID: \(userIdentifier)")
-            print("전체 이름: \(fullName?.givenName ?? "") \(fullName?.familyName ?? "")")
-            print("이메일: \(email ?? "")")
-            print("Token: \(identityToken!)")
-            print("authorizationCode: \(authorizationCode!)")
-            
-            // 로그인 성공
-            self.viewModel.successLogin()
-            
-        // 암호 기반 인증에 성공한 경우(iCloud), 사용자의 인증 정보를 확인하고 필요한 작업을 수행합니다
-        case let passwordCredential as ASPasswordCredential:
-            let userIdentifier = passwordCredential.user
-            let password = passwordCredential.password
-            
-            print("암호 기반 인증에 성공하였습니다.")
-            print("사용자 이름: \(userIdentifier)")
-            print("비밀번호: \(password)")
-            
-            // 여기에 로그인 성공 후 수행할 작업을 추가하세요.
-            let mainVC = MainViewController()
-            mainVC.modalPresentationStyle = .fullScreen
-            present(mainVC, animated: true)
-            
-        default: break
-            
-        }
-    }
-}

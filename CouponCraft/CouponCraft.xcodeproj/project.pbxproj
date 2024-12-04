@@ -16,24 +16,22 @@
 		303398E82CE1A8EA00977E8A /* QRScannerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303398E72CE1A8EA00977E8A /* QRScannerUseCase.swift */; };
 		303398EA2CE1A90100977E8A /* QRScannerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303398E92CE1A90100977E8A /* QRScannerRepository.swift */; };
 		303398ED2CE1A93A00977E8A /* CameraPermissionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303398EC2CE1A93A00977E8A /* CameraPermissionDataSource.swift */; };
-		303398EF2CE1EE5A00977E8A /* DownloadImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303398EE2CE1EE5A00977E8A /* DownloadImageUseCase.swift */; };
-		303398F12CE1EE7300977E8A /* ImageDownloadRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303398F02CE1EE7300977E8A /* ImageDownloadRepository.swift */; };
 		303398F32CE1F60700977E8A /* PhotoLibraryPermissionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303398F22CE1F60700977E8A /* PhotoLibraryPermissionDataSource.swift */; };
 		303398F52CE1F63A00977E8A /* PermissionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303398F42CE1F63A00977E8A /* PermissionUseCase.swift */; };
 		303398F72CE1F6F800977E8A /* PermissionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303398F62CE1F6F800977E8A /* PermissionRepository.swift */; };
 		303398F92CE3287A00977E8A /* CouponCraftCardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303398F82CE3287900977E8A /* CouponCraftCardType.swift */; };
 		303398FB2CE328AE00977E8A /* CouponCraftCardType.xib in Resources */ = {isa = PBXBuildFile; fileRef = 303398FA2CE328AE00977E8A /* CouponCraftCardType.xib */; };
-		303399012CE44CD900977E8A /* QRItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303399002CE44CD900977E8A /* QRItem.swift */; };
 		303399032CE4714100977E8A /* TimestampProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303399022CE4714100977E8A /* TimestampProvider.swift */; };
-		303399092CE4728400977E8A /* QRItemUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303399082CE4728400977E8A /* QRItemUseCase.swift */; };
-		3033990B2CE472D400977E8A /* QRItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3033990A2CE472D400977E8A /* QRItemRepository.swift */; };
-		303399102CE482D000977E8A /* MyQRTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3033990E2CE482D000977E8A /* MyQRTableViewCell.swift */; };
-		303399112CE482D000977E8A /* MyQRTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3033990F2CE482D000977E8A /* MyQRTableViewCell.xib */; };
 		303399142CE4A89700977E8A /* QRDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303399132CE4A89600977E8A /* QRDetailView.swift */; };
 		303399162CE4A91300977E8A /* QRDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 303399152CE4A91300977E8A /* QRDetailView.xib */; };
 		303399182CE5F61400977E8A /* AppVersionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303399172CE5F61400977E8A /* AppVersionRepository.swift */; };
 		3033991A2CE5F63200977E8A /* FetchAppVersionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303399192CE5F63200977E8A /* FetchAppVersionUseCase.swift */; };
 		3033991C2CE71D8400977E8A /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 3033991B2CE71D8400977E8A /* Localizable.xcstrings */; };
+		30596ABC2D003B12005A6701 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30596ABB2D003B12005A6701 /* UserInfo.swift */; };
+		30596ABF2D003B93005A6701 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 30596ABE2D003B93005A6701 /* SDWebImage */; };
+		30596AC12D004139005A6701 /* SocialLoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30596AC02D004139005A6701 /* SocialLoginUseCase.swift */; };
+		30596AC32D004321005A6701 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30596AC22D004321005A6701 /* UserRepository.swift */; };
+		30596AC62D004644005A6701 /* AppleLoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30596AC52D004644005A6701 /* AppleLoginRepository.swift */; };
 		30A2B1C22CE7B06600063D92 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 30A2B1C12CE7B06600063D92 /* SnapKit */; };
 		30A2B1C92CE8C13B00063D92 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30A2B1CB2CE8C13B00063D92 /* InfoPlist.strings */; };
 		30A52E732CF6C19800724934 /* SignInMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A52E712CF6C19800724934 /* SignInMainViewController.swift */; };
@@ -72,7 +70,7 @@
 		30BBAA552CB517E400A84090 /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30BBAA542CB517E400A84090 /* MainViewController.storyboard */; };
 		30BBAA592CB522FA00A84090 /* AppColors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30BBAA582CB522FA00A84090 /* AppColors.xcassets */; };
 		30BBAA5E2CB8FFCE00A84090 /* AppSettingTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBAA5D2CB8FFCE00A84090 /* AppSettingTabViewController.swift */; };
-		30BBAA692CB9025E00A84090 /* QRTypeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBAA682CB9025E00A84090 /* QRTypeItem.swift */; };
+		30BBAA692CB9025E00A84090 /* CouponItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBAA682CB9025E00A84090 /* CouponItem.swift */; };
 		30BBAA6F2CB9085B00A84090 /* QRDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30BBAA6E2CB9085B00A84090 /* QRDetailViewController.xib */; };
 		30BBAA702CB9085B00A84090 /* QRDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBAA6D2CB9085B00A84090 /* QRDetailViewController.swift */; };
 		30BBAA722CB9091600A84090 /* QRDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBAA712CB9091600A84090 /* QRDetailViewModel.swift */; };
@@ -125,24 +123,21 @@
 		303398E72CE1A8EA00977E8A /* QRScannerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerUseCase.swift; sourceTree = "<group>"; };
 		303398E92CE1A90100977E8A /* QRScannerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerRepository.swift; sourceTree = "<group>"; };
 		303398EC2CE1A93A00977E8A /* CameraPermissionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermissionDataSource.swift; sourceTree = "<group>"; };
-		303398EE2CE1EE5A00977E8A /* DownloadImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImageUseCase.swift; sourceTree = "<group>"; };
-		303398F02CE1EE7300977E8A /* ImageDownloadRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadRepository.swift; sourceTree = "<group>"; };
 		303398F22CE1F60700977E8A /* PhotoLibraryPermissionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryPermissionDataSource.swift; sourceTree = "<group>"; };
 		303398F42CE1F63A00977E8A /* PermissionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionUseCase.swift; sourceTree = "<group>"; };
 		303398F62CE1F6F800977E8A /* PermissionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionRepository.swift; sourceTree = "<group>"; };
 		303398F82CE3287900977E8A /* CouponCraftCardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponCraftCardType.swift; sourceTree = "<group>"; };
 		303398FA2CE328AE00977E8A /* CouponCraftCardType.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CouponCraftCardType.xib; sourceTree = "<group>"; };
-		303399002CE44CD900977E8A /* QRItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRItem.swift; sourceTree = "<group>"; };
 		303399022CE4714100977E8A /* TimestampProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimestampProvider.swift; sourceTree = "<group>"; };
-		303399082CE4728400977E8A /* QRItemUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRItemUseCase.swift; sourceTree = "<group>"; };
-		3033990A2CE472D400977E8A /* QRItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRItemRepository.swift; sourceTree = "<group>"; };
-		3033990E2CE482D000977E8A /* MyQRTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQRTableViewCell.swift; sourceTree = "<group>"; };
-		3033990F2CE482D000977E8A /* MyQRTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyQRTableViewCell.xib; sourceTree = "<group>"; };
 		303399132CE4A89600977E8A /* QRDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRDetailView.swift; sourceTree = "<group>"; };
 		303399152CE4A91300977E8A /* QRDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRDetailView.xib; sourceTree = "<group>"; };
 		303399172CE5F61400977E8A /* AppVersionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionRepository.swift; sourceTree = "<group>"; };
 		303399192CE5F63200977E8A /* FetchAppVersionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAppVersionUseCase.swift; sourceTree = "<group>"; };
 		3033991B2CE71D8400977E8A /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		30596ABB2D003B12005A6701 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		30596AC02D004139005A6701 /* SocialLoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginUseCase.swift; sourceTree = "<group>"; };
+		30596AC22D004321005A6701 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		30596AC52D004644005A6701 /* AppleLoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginRepository.swift; sourceTree = "<group>"; };
 		30A2B1CA2CE8C13B00063D92 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		30A2B1CC2CE8C2F900063D92 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		30A52E712CF6C19800724934 /* SignInMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInMainViewController.swift; sourceTree = "<group>"; };
@@ -183,7 +178,7 @@
 		30BBAA542CB517E400A84090 /* MainViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainViewController.storyboard; sourceTree = "<group>"; };
 		30BBAA582CB522FA00A84090 /* AppColors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppColors.xcassets; sourceTree = "<group>"; };
 		30BBAA5D2CB8FFCE00A84090 /* AppSettingTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingTabViewController.swift; sourceTree = "<group>"; };
-		30BBAA682CB9025E00A84090 /* QRTypeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRTypeItem.swift; sourceTree = "<group>"; };
+		30BBAA682CB9025E00A84090 /* CouponItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponItem.swift; sourceTree = "<group>"; };
 		30BBAA6D2CB9085B00A84090 /* QRDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRDetailViewController.swift; sourceTree = "<group>"; };
 		30BBAA6E2CB9085B00A84090 /* QRDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRDetailViewController.xib; sourceTree = "<group>"; };
 		30BBAA712CB9091600A84090 /* QRDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRDetailViewModel.swift; sourceTree = "<group>"; };
@@ -221,6 +216,7 @@
 				30A52E862CF6F6B800724934 /* GoogleSignInSwift in Frameworks */,
 				30A2B1C22CE7B06600063D92 /* SnapKit in Frameworks */,
 				30E4AE582CEB1F2600B6C503 /* FirebaseCrashlytics in Frameworks */,
+				30596ABF2D003B93005A6701 /* SDWebImage in Frameworks */,
 				30E4AE562CEB1F2600B6C503 /* FirebaseCore in Frameworks */,
 				30E4AE542CEB1F2600B6C503 /* FirebaseAnalytics in Frameworks */,
 			);
@@ -286,19 +282,9 @@
 		3033990C2CE4829200977E8A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				3033990D2CE4829C00977E8A /* MyQRTableViewCell */,
 				303398CC2CDDE73100977E8A /* QRTypeCollectionViewCell */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		3033990D2CE4829C00977E8A /* MyQRTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				3033990E2CE482D000977E8A /* MyQRTableViewCell.swift */,
-				3033990F2CE482D000977E8A /* MyQRTableViewCell.xib */,
-			);
-			path = MyQRTableViewCell;
 			sourceTree = "<group>";
 		};
 		303399122CE4A87800977E8A /* QRDetailView */ = {
@@ -308,6 +294,14 @@
 				303399152CE4A91300977E8A /* QRDetailView.xib */,
 			);
 			path = QRDetailView;
+			sourceTree = "<group>";
+		};
+		30596AC42D00463A005A6701 /* AppleLogin */ = {
+			isa = PBXGroup;
+			children = (
+				30596AC52D004644005A6701 /* AppleLoginRepository.swift */,
+			);
+			path = AppleLogin;
 			sourceTree = "<group>";
 		};
 		30A52E6A2CF5656500724934 /* Sign */ = {
@@ -567,8 +561,8 @@
 		30BBAA672CB9025000A84090 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				303399002CE44CD900977E8A /* QRItem.swift */,
-				30BBAA682CB9025E00A84090 /* QRTypeItem.swift */,
+				30BBAA682CB9025E00A84090 /* CouponItem.swift */,
+				30596ABB2D003B12005A6701 /* UserInfo.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -648,12 +642,12 @@
 		30BBAA7E2CB912ED00A84090 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				3033990A2CE472D400977E8A /* QRItemRepository.swift */,
+				30596AC42D00463A005A6701 /* AppleLogin */,
 				30BBAA7F2CB9130500A84090 /* QRListRepository.swift */,
 				303398E92CE1A90100977E8A /* QRScannerRepository.swift */,
-				303398F02CE1EE7300977E8A /* ImageDownloadRepository.swift */,
 				303398F62CE1F6F800977E8A /* PermissionRepository.swift */,
 				303399172CE5F61400977E8A /* AppVersionRepository.swift */,
+				30596AC22D004321005A6701 /* UserRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -679,10 +673,9 @@
 			children = (
 				30BBAA8C2CB9166300A84090 /* GetQRListUseCase.swift */,
 				303398E72CE1A8EA00977E8A /* QRScannerUseCase.swift */,
-				303398EE2CE1EE5A00977E8A /* DownloadImageUseCase.swift */,
 				303398F42CE1F63A00977E8A /* PermissionUseCase.swift */,
-				303399082CE4728400977E8A /* QRItemUseCase.swift */,
 				303399192CE5F63200977E8A /* FetchAppVersionUseCase.swift */,
+				30596AC02D004139005A6701 /* SocialLoginUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -728,6 +721,7 @@
 				30E4AE592CEB1F2600B6C503 /* FirebaseDatabase */,
 				30A52E852CF6F6B800724934 /* GoogleSignInSwift */,
 				30A52E882CF701EB00724934 /* KakaoSDK */,
+				30596ABE2D003B93005A6701 /* SDWebImage */,
 			);
 			productName = WithRunning;
 			productReference = 30BBA9EE2CB501E300A84090 /* CouponCraft.app */;
@@ -813,6 +807,7 @@
 				30E4AE522CEB1F2600B6C503 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				30A52E842CF6F6B800724934 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				30A52E872CF701EB00724934 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
+				30596ABD2D003B93005A6701 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 30BBA9EF2CB501E300A84090 /* Products */;
 			projectDirPath = "";
@@ -834,7 +829,6 @@
 				303398FB2CE328AE00977E8A /* CouponCraftCardType.xib in Resources */,
 				30A52E8C2CF839DC00724934 /* MyTicketCollectionViewCell.xib in Resources */,
 				30BBA9FB2CB501E400A84090 /* Assets.xcassets in Resources */,
-				303399112CE482D000977E8A /* MyQRTableViewCell.xib in Resources */,
 				30A52E742CF6C19800724934 /* SignInMainViewController.xib in Resources */,
 				303398DB2CDDFA8000977E8A /* CouponCraftURLType.xib in Resources */,
 				30BBAA592CB522FA00A84090 /* AppColors.xcassets in Resources */,
@@ -873,7 +867,6 @@
 				30BBAA3F2CB509A100A84090 /* BackButtonEmptyTitleNavigationBarBehavior.swift in Sources */,
 				30BBAA322CB5057D00A84090 /* Observable.swift in Sources */,
 				30BBAA702CB9085B00A84090 /* QRDetailViewController.swift in Sources */,
-				303398F12CE1EE7300977E8A /* ImageDownloadRepository.swift in Sources */,
 				30BBAA5E2CB8FFCE00A84090 /* AppSettingTabViewController.swift in Sources */,
 				30BBAA232CB5028000A84090 /* AppFlowCoordinator.swift in Sources */,
 				30BBAA412CB509D100A84090 /* BlackStyleNavigationBarBehavior.swift in Sources */,
@@ -883,17 +876,16 @@
 				30BBAA2E2CB503D500A84090 /* MainViewModel.swift in Sources */,
 				30BBAA372CB5075C00A84090 /* DispatchQueueType.swift in Sources */,
 				30BBAA842CB9137800A84090 /* Cancellable.swift in Sources */,
+				30596AC32D004321005A6701 /* UserRepository.swift in Sources */,
 				30A52E772CF6D9F000724934 /* UserTextFieldView.swift in Sources */,
 				30A52E732CF6C19800724934 /* SignInMainViewController.swift in Sources */,
 				303398D82CDDFA1E00977E8A /* CouponCraftTypeView.swift in Sources */,
 				30E4AE732CEC32AE00B6C503 /* UIColor+Extensions.swift in Sources */,
-				303399092CE4728400977E8A /* QRItemUseCase.swift in Sources */,
 				303398ED2CE1A93A00977E8A /* CameraPermissionDataSource.swift in Sources */,
 				30BBAA342CB506C300A84090 /* CouponDataViewModel.swift in Sources */,
 				30A52E7B2CF6E11200724934 /* PaddingLabel.swift in Sources */,
 				303398F32CE1F60700977E8A /* PhotoLibraryPermissionDataSource.swift in Sources */,
 				30BBAA2B2CB5038E00A84090 /* MainViewController.swift in Sources */,
-				303398EF2CE1EE5A00977E8A /* DownloadImageUseCase.swift in Sources */,
 				30BBAA8A2CB9141800A84090 /* RepositoryTask.swift in Sources */,
 				303398EA2CE1A90100977E8A /* QRScannerRepository.swift in Sources */,
 				303399032CE4714100977E8A /* TimestampProvider.swift in Sources */,
@@ -913,11 +905,11 @@
 				303399142CE4A89700977E8A /* QRDetailView.swift in Sources */,
 				30BBAA492CB5140F00A84090 /* MypageTabViewController.swift in Sources */,
 				30BBAA822CB9131700A84090 /* DefaultRQListRepository.swift in Sources */,
-				303399012CE44CD900977E8A /* QRItem.swift in Sources */,
+				30596AC62D004644005A6701 /* AppleLoginRepository.swift in Sources */,
 				30E4AE662CEB2D6A00B6C503 /* AdmobManager.swift in Sources */,
 				303398D52CDDF98D00977E8A /* CouponCraftURLType.swift in Sources */,
 				30BBAA772CB90A5C00A84090 /* AccessibilityIdentifier.swift in Sources */,
-				3033990B2CE472D400977E8A /* QRItemRepository.swift in Sources */,
+				30596AC12D004139005A6701 /* SocialLoginUseCase.swift in Sources */,
 				30E4AE4F2CEAD53E00B6C503 /* Config.swift in Sources */,
 				30BBAA802CB9130500A84090 /* QRListRepository.swift in Sources */,
 				30E4AE622CEB2C4C00B6C503 /* CouponCraftBetaType.swift in Sources */,
@@ -927,10 +919,10 @@
 				303398DF2CE19EE200977E8A /* ScanQRTabViewController.swift in Sources */,
 				30BBAA532CB517AA00A84090 /* StoryboardInstantiable.swift in Sources */,
 				303398F52CE1F63A00977E8A /* PermissionUseCase.swift in Sources */,
-				303399102CE482D000977E8A /* MyQRTableViewCell.swift in Sources */,
-				30BBAA692CB9025E00A84090 /* QRTypeItem.swift in Sources */,
+				30BBAA692CB9025E00A84090 /* CouponItem.swift in Sources */,
 				30BBAA722CB9091600A84090 /* QRDetailViewModel.swift in Sources */,
 				303398F92CE3287A00977E8A /* CouponCraftCardType.swift in Sources */,
+				30596ABC2D003B12005A6701 /* UserInfo.swift in Sources */,
 				30BBA9F42CB501E300A84090 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1300,6 +1292,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		30596ABD2D003B93005A6701 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.20.0;
+			};
+		};
 		30A2B1C02CE7AFDF00063D92 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -1343,6 +1343,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		30596ABE2D003B93005A6701 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 30596ABD2D003B93005A6701 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
 		30A2B1C12CE7B06600063D92 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 30A2B1C02CE7AFDF00063D92 /* XCRemoteSwiftPackageReference "SnapKit" */;

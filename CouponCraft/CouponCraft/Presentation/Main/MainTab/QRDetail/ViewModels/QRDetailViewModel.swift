@@ -23,7 +23,7 @@ final class DefaultQRDetailViewModel: QRDetailViewModel {
     private let mainQueue: DispatchQueueType
     
     init(
-        qrData: QRItem,
+        qrData: CouponDataViewModel,
         mainQueue: DispatchQueueType = DispatchQueue.main
     ) {
         self.title = qrData.title

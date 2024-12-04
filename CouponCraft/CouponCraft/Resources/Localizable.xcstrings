@@ -125,6 +125,7 @@
     },
     "App Created" : {
       "comment" : "App Created",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -219,6 +220,7 @@
     },
     "Background" : {
       "comment" : "Background",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -342,6 +344,7 @@
     },
     "Choose how to save the QR." : {
       "comment" : "Choose how to save the QR.",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -383,6 +386,7 @@
     },
     "Circle" : {
       "comment" : "Circle",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -553,6 +557,7 @@
     },
     "Created" : {
       "comment" : "Created",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1331,6 +1336,7 @@
     },
     "Please choose the shape of the logo to add." : {
       "comment" : "추가할 로고의 모양을 선택해주세요.",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1412,6 +1418,7 @@
     },
     "QR code" : {
       "comment" : "QR code",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1618,6 +1625,7 @@
     },
     "Save QR Image to Gallery" : {
       "comment" : "Save QR Image to Gallery",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1659,6 +1667,7 @@
     },
     "Save to My QR" : {
       "comment" : "Save to My QR",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1700,6 +1709,7 @@
     },
     "Saved by Scan" : {
       "comment" : "Saved by Scan",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1784,6 +1794,7 @@
     },
     "Scanned" : {
       "comment" : "Scanned",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1825,6 +1836,7 @@
     },
     "Select the part where you want to change the color." : {
       "comment" : "컬러를 변경할 부분을 선택하세요.",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1949,6 +1961,7 @@
     },
     "Square" : {
       "comment" : "Square",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2314,6 +2327,7 @@
     },
     "Untitled" : {
       "comment" : "Untitled",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {

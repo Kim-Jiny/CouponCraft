@@ -10,6 +10,6 @@ import Foundation
 protocol QRListRepository {
     @discardableResult
     func fetchQRTypeList(
-        completion: @escaping (Result<[QRTypeItem], Error>) -> Void
+        completion: @escaping (Result<[CouponItem], Error>) -> Void
     ) -> Cancellable?
 }

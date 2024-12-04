@@ -10,7 +10,7 @@ import UIKit
 protocol SignInCoordinatorDependencies {
     func makeSigninViewController(actions: SigninViewModelActions) -> SignInMainViewController
     func makeMainViewController(actions: MainViewModelActions) -> MainViewController
-    func makeQRDetailsViewController(qr: QRItem) -> QRDetailViewController
+    func makeQRDetailsViewController(qr: CouponDataViewModel) -> QRDetailViewController
 }
 
 final class SignInCoordinator {
@@ -45,7 +45,7 @@ final class SignInCoordinator {
         navigationController?.setViewControllers([mainVC], animated: false)
     }
     
-    private func showQRDetailsVC(qr: QRItem) {
+    private func showQRDetailsVC(qr: CouponDataViewModel) {
         let qrDetailVC = dependencies.makeQRDetailsViewController(qr: qr)
         navigationController?.pushViewController(qrDetailVC, animated: true)
     }

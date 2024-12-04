@@ -9,7 +9,7 @@ import Foundation
 
 protocol GetQRListUseCase {
     func execute(
-        completion: @escaping (Result<[QRTypeItem], Error>) -> Void
+        completion: @escaping (Result<[CouponItem], Error>) -> Void
     ) -> Cancellable?
 }
 
@@ -25,7 +25,7 @@ final class DefaultGetQRListUseCase: GetQRListUseCase {
     }
 
     func execute(
-        completion: @escaping (Result<[QRTypeItem], Error>) -> Void
+        completion: @escaping (Result<[CouponItem], Error>) -> Void
     ) -> Cancellable? {
 
         return qrListRepository.fetchQRTypeList(completion: { result in

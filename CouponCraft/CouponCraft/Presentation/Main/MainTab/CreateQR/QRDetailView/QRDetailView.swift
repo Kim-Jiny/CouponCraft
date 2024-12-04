@@ -7,18 +7,12 @@
 
 import UIKit
 protocol QRDetailDelegate: AnyObject {
-    func saveImage()
-    func shareImage()
-    
     func backTab()
-    func changeQRData(_ data: QRItem)
-    func removeData(_ data: QRItem)
-    func readData(_ data: QRItem)
 }
 
 class QRDetailView: UIView {
     weak var delegate: QRDetailDelegate?
-    var data: QRItem? = nil
+    var data: CouponDataViewModel? = nil
     
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var qrImg: UIImageView!
@@ -83,60 +77,18 @@ class QRDetailView: UIView {
         backDarkView.isUserInteractionEnabled = true // 터치 이벤트를 받을 수 있게 설정
         backDarkView.addGestureRecognizer(tapGesture)
         
-        titleTextView.delegate = self
     }
     
     func fill(
-        with item: QRItem
+        with item: CouponDataViewModel
     ) {
         self.data = item
         self.titleTextView.text = item.title
-        let qrCreateType = item.qrType == .other ? NSLocalizedString("Scanned", comment: "Scanned") :  NSLocalizedString("Created", comment: "Created")
-        self.timeLB.text = "\(TimestampProvider().getFormattedDate(item.createdAt)) \(qrCreateType)"
-        if let imgdata = item.qrImageData, let img = UIImage(data: imgdata) {
-            self.qrImg.image = img
-        }else {
-            self.qrImg.image = UIImage(systemName: "exclamationmark.octagon.fill")
-        }
     }
     
-    @IBAction func saveBtn(_ sender: Any) {
-        self.delegate?.saveImage()
-    }
-    
-    @IBAction func shareBtn(_ sender: Any) {
-        self.delegate?.shareImage()
-    }
-    
-    @IBAction func readBtn(_ sender: Any) {
-        if self.data != nil {
-            self.delegate?.readData(self.data!)
-        }
-    }
-    
-    @IBAction func removeBtn(_ sender: Any) {
-        if self.data != nil {
-            self.delegate?.removeData(self.data!)
-        }
-    }
     
     @objc private func backDarkViewTapped() {
         self.delegate?.backTab()
     }
 }
 
-
-extension QRDetailView: UITextFieldDelegate {
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if self.data != nil {
-            data?.title = textField.text ??  NSLocalizedString("Untitled", comment: "Untitled")
-            self.delegate?.changeQRData(self.data!)
-        }
-    }
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        if textField.text ==  NSLocalizedString("Untitled", comment: "Untitled") {
-            textField.text = ""
-        }
-    }
-}
