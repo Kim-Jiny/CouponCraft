@@ -43,6 +43,7 @@
     },
     "Add logo" : {
       "comment" : "Add logo",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -428,6 +429,7 @@
     },
     "Color" : {
       "comment" : "Share",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -639,6 +641,7 @@
     },
     "Download Complete" : {
       "comment" : "Download Complete",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -760,6 +763,7 @@
       }
     },
     "Generate" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1213,6 +1217,7 @@
     },
     "Photo access permission is required to save the photo. Please change the permission in Settings." : {
       "comment" : "Photo access permission is required to save the photo. Please change the permission in Settings.",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1254,6 +1259,7 @@
     },
     "Photo Access Permission Required" : {
       "comment" : "Photo Access Permission Required",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2125,6 +2131,7 @@
       }
     },
     "The feature will be available in the next version." : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2166,6 +2173,7 @@
     },
     "The QR image has been saved to the gallery." : {
       "comment" : "The QR image has been saved to the gallery.",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {

@@ -10,13 +10,17 @@ import KakaoSDKAuth
 import KakaoSDKUser
 
 // 로그인 관련 유스케이스 정의
-protocol SocialLoginUseCase: AnyObject {
+protocol LoginUseCase: AnyObject {
     func googleLogin(presenter: UIViewController, completion: @escaping (Result<UserInfoDTO, Error>) -> Void)
     func appleLogin(presenter: UIViewController, completion: @escaping (Result<UserInfoDTO, Error>) -> Void)
     func kakaoLogin(presenter: UIViewController, completion: @escaping (Result<UserInfoDTO, Error>) -> Void)
+    func localLogin(id: String, pw: String, completion: @escaping (Result<UserInfoDTO, Error>) -> Void)
+    
+    
+    func autoLogin(authToken: String, completion: @escaping (Result<UserInfoDTO, Error>) -> Void)
 }
 
-class DefaultSocialLoginUseCase: SocialLoginUseCase {
+class DefaultLoginUseCase: LoginUseCase {
     
     private let userRepository: UserRepository // 유저 데이터를 받아오는 리포지토리
     private let appleLoginRepository: AppleLoginRepository // 애플 로그인 로직을 담당하는 리포지토리 리포지토리
@@ -76,9 +80,30 @@ class DefaultSocialLoginUseCase: SocialLoginUseCase {
         }
     }
     
+    func localLogin(id: String, pw: String, completion: @escaping (Result<UserInfoDTO, Error>) -> Void) {
+        self.fetchUserDataFromServer(id: id, pw: pw, completion: completion)
+    }
+    
+    func autoLogin(authToken: String, completion: @escaping (Result<UserInfoDTO, Error>) -> Void) {
+        self.fetchUserDataFromServer(authToken: authToken, loginType: UserManager.shared.loginType, completion: completion)
+    }
+    
     // 서버에서 유저 정보를 받아오는 메서드
     private func fetchUserDataFromServer(authToken: String, loginType: LoginType, completion: @escaping (Result<UserInfoDTO, Error>) -> Void) {
         userRepository.fetchUserData(authToken: authToken, loginType: loginType) { result in
+            switch result {
+            case .success(let userData):
+                completion(.success(userData)) // 유저 데이터 반환
+            case .failure(let error):
+                completion(.failure(error)) // 실패 시 에러 반환
+            }
+        }
+    }
+    
+    
+    // 서버에서 유저 정보를 받아오는 메서드
+    private func fetchUserDataFromServer(id: String, pw: String, completion: @escaping (Result<UserInfoDTO, Error>) -> Void) {
+        userRepository.fetchUserData(id: id, pw: pw) { result in
             switch result {
             case .success(let userData):
                 completion(.success(userData)) // 유저 데이터 반환

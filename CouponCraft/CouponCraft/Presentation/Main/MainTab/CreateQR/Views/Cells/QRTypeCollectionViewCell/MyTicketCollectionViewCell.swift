@@ -23,6 +23,8 @@ class MyTicketCollectionViewCell: UICollectionViewCell {
     ) {
         self.viewModel = viewModel
         self.typeLB.text = viewModel.title
+        self.brandLB.text = viewModel.providerName
+        self.expireLB.text = "~ \(viewModel.expirationDate)"
         self.layer.cornerRadius = 5
         self.backgroundColor = .speedMain4
     }

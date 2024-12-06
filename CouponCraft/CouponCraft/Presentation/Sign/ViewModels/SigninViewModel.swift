@@ -19,7 +19,7 @@ struct SigninViewModelActions {
 // Input 프로토콜: 뷰에서 호출되는 메서드들
 protocol SigninViewModelInput {
     func viewDidLoad()
-    func successLogin()
+    func successLogin(_ userData: UserInfoDTO)
     func googleLogin(_ presenter: UIViewController)
     func appleLogin(_ presenter: UIViewController)
     func kakaoLogin(_ presenter: UIViewController)
@@ -43,7 +43,7 @@ final class DefaultSigninViewModel: SigninViewModel {
     private let permissionUseCase: PermissionUseCase
     private let fetchAppVersionUseCase: FetchAppVersionUseCase
     private let actions: SigninViewModelActions?
-    private let socialLoginUseCase: SocialLoginUseCase // 로그인 유스케이스 추가
+    private let loginUseCase: LoginUseCase // 로그인 유스케이스 추가
     private let mainQueue: DispatchQueueType
     
     // MARK: - Output (출력 프로퍼티)
@@ -53,13 +53,13 @@ final class DefaultSigninViewModel: SigninViewModel {
     init(
         permissionUseCase: PermissionUseCase,
         fetchAppVersionUseCase: FetchAppVersionUseCase,
-        socialLoginUseCase: SocialLoginUseCase, // 로그인 유스케이스 의존성 추가
+        socialLoginUseCase: LoginUseCase, // 로그인 유스케이스 의존성 추가
         actions: SigninViewModelActions? = nil,
         mainQueue: DispatchQueueType = DispatchQueue.main
     ) {
         self.permissionUseCase = permissionUseCase
         self.fetchAppVersionUseCase = fetchAppVersionUseCase
-        self.socialLoginUseCase = socialLoginUseCase
+        self.loginUseCase = socialLoginUseCase
         self.actions = actions
         self.mainQueue = mainQueue
     }
@@ -82,17 +82,18 @@ extension DefaultSigninViewModel {
     }
     
     // 로그인 성공
-    func successLogin() {
+    func successLogin(_ userData: UserInfoDTO) {
         self.actions?.showMainVC()
+        UserManager.shared.saveUserInfo(userData)
         //TODO: 전달 받은 유저데이터 처리
     }
     
     // Google 로그인
     func googleLogin(_ presenter: UIViewController) {
-        socialLoginUseCase.googleLogin(presenter: presenter) { [weak self] result in
+        loginUseCase.googleLogin(presenter: presenter) { [weak self] result in
             switch result {
-            case .success(_):
-                self?.successLogin()
+            case .success(let data):
+                self?.successLogin(data)
             case .failure(let error):
                 self?.handle(error: error)
             }
@@ -101,10 +102,10 @@ extension DefaultSigninViewModel {
 
     // Apple 로그인
     func appleLogin(_ presenter: UIViewController) {
-        socialLoginUseCase.appleLogin(presenter: presenter) { [weak self] result in
+        loginUseCase.appleLogin(presenter: presenter) { [weak self] result in
             switch result {
-            case .success(_):
-                self?.successLogin()
+            case .success(let data):
+                self?.successLogin(data)
             case .failure(let error):
                 self?.handle(error: error)
             }
@@ -113,10 +114,10 @@ extension DefaultSigninViewModel {
 
     // Kakao 로그인
     func kakaoLogin(_ presenter: UIViewController) {
-        socialLoginUseCase.kakaoLogin(presenter: presenter) { [weak self] result in
+        loginUseCase.kakaoLogin(presenter: presenter) { [weak self] result in
             switch result {
-            case .success(_):
-                self?.successLogin()
+            case .success(let data):
+                self?.successLogin(data)
             case .failure(let error):
                 self?.handle(error: error)
             }

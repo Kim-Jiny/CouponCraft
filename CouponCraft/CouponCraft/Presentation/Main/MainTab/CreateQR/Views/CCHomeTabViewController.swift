@@ -21,7 +21,6 @@ class CCHomeTabViewController: UIViewController, StoryboardInstantiable {
     @IBOutlet weak var expirationCouponStackView: UIStackView!
     @IBOutlet weak var expirationCouponCollectionView: UICollectionView!
     
-    var typeView: CouponCraftTypeView? = nil
     private var isFirstSelectionDone = false
     private var colorPickerManager = ColorPickerManager()
     
@@ -62,9 +61,9 @@ class CCHomeTabViewController: UIViewController, StoryboardInstantiable {
     }
          
     private func bind(to viewModel: MainViewModel) {
-        viewModel.typeItems.observe(on: self) { [weak self] _ in self?.updateItems() }
+        viewModel.userCouponItems.observe(on: self) { [weak self] _ in self?.updateItems() }
         
-        viewModel.typeItems.observe(on: self) { ccItems in
+        viewModel.userCouponItems.observe(on: self) { ccItems in
             
         }
         
@@ -75,27 +74,6 @@ class CCHomeTabViewController: UIViewController, StoryboardInstantiable {
         self.expirationCouponCollectionView.reloadData()
     }
     
-    private func showSaveAlert() {
-        let alert = UIAlertController(title: NSLocalizedString("Download Complete", comment: "Download Complete"),
-                                      message: NSLocalizedString("The QR image has been saved to the gallery.", comment: "The QR image has been saved to the gallery."),
-                                      preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment:"OK"), style: .default) {_ in
-            self.typeView?.imageSaveCompleted()
-        })
-        present(alert, animated: true)
-    }
-    
-    private func showPermissionAlert() {
-        let alert = UIAlertController(title: NSLocalizedString("Photo Access Permission Required", comment:"Photo Access Permission Required"),
-                                      message: NSLocalizedString("Photo access permission is required to save the photo. Please change the permission in Settings.", comment:"Photo access permission is required to save the photo. Please change the permission in Settings."),
-                                      preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment:"Cancel"), style: .cancel))
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Go to Settings", comment:"Go to Settings"), style: .default, handler: { [weak self] _ in
-            self?.viewModel?.openAppSettings()
-        }))
-        present(alert, animated: true)
-    }
-
 }
 
 
@@ -107,16 +85,16 @@ extension CCHomeTabViewController: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView === myCouponCollectionView {
-            return viewModel?.typeItems.value.count ?? 0
+            return viewModel?.userCouponItems.value.count ?? 0
         }else if collectionView === expirationCouponCollectionView {
-            return viewModel?.typeItems.value.count ?? 0
+            return viewModel?.userCouponItems.value.count ?? 0
         }
-        return viewModel?.typeItems.value.count ?? 0
+        return viewModel?.userCouponItems.value.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyTicketCollectionViewCell.id, for: indexPath) as? MyTicketCollectionViewCell, let viewModel = viewModel else { return UICollectionViewCell() }
-        cell.fill(with: viewModel.typeItems.value[indexPath.row])
+        cell.fill(with: viewModel.userCouponItems.value[indexPath.row])
         return cell
     }
 }

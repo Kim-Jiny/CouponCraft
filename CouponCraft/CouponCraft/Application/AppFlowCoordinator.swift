@@ -20,7 +20,7 @@ final class AppFlowCoordinator {
 
     func start() {
         if isUserLoggedIn() {
-            // 유저가 로그인 되어있으면 MainCoordinator 시작
+            // 유저가 로그인 되어있으면 MainCoordinator 시작 -> userData는 받아와야하는데,
             let flow = makeMainCoordinator(navigationController: navigationController)
             flow.start()
         } else {
@@ -34,7 +34,13 @@ final class AppFlowCoordinator {
         // 로그인 여부 확인 로직 추가
         // 예를 들어, UserDefaults, Keychain, 또는 세션 데이터를 확인할 수 있음
         // return UserDefaults.standard.bool(forKey: "isLoggedIn")
-        return false
+        // 자동 로그인이 설정되어있고 실제로 소셜로그인에서 토큰을 받아올수있는지 확인할 수 있는경우, + authToken이 살아있는경우 ( 유저가 앱내에서 로그아웃을 누르면 사라짐 )
+        
+//        if let authToken = UserManager.shared.getAuthToken() {
+//        }
+        //테스트를 위해서 authToken 임의 지정
+        UserManager.shared.updateAuthToken("임의로 지정한 내 어쓰토큰")
+        return true
     }
     
     func makeMainCoordinator(navigationController: UINavigationController) -> MainCoordinator {
@@ -54,10 +60,12 @@ extension AppFlowCoordinator: MainCoordinatorDependencies {
     
     func makeMainViewModel(actions: MainViewModelActions) -> MainViewModel {
         DefaultMainViewModel(
+            loginUseCase: makeLoginUseCase(),
             permissionUseCase: makePermissionUseCase(),
             getQRListUseCase: makeGetQRListUseCase(),
             qrScannerUseCase: makeQRScannerUseCase(),
             fetchAppVersionUseCase: makeFetchAppVersionUseCase(),
+            ccHomeUseCase: makeCCHomeUseCase(),
             actions: actions
         )
     }
@@ -89,9 +97,13 @@ extension AppFlowCoordinator: MainCoordinatorDependencies {
         DefaultFetchAppVersionUseCase(repository: makeAppVersionRepository())
     }
     
-    func makeSocialLoginUseCase() -> SocialLoginUseCase {
-        DefaultSocialLoginUseCase(userRepository: makeUserRepository(),
+    func makeLoginUseCase() -> LoginUseCase {
+        DefaultLoginUseCase(userRepository: makeUserRepository(),
                                   appleLoginRepository: makeAppleLoginRepository())
+    }
+    
+    func makeCCHomeUseCase() -> CCHomeUseCase {
+        DefaultCCHomeUseCase(ccHomeRepository: makeCCHomeRepository())
     }
     
     // MARK: - Repositories
@@ -120,6 +132,10 @@ extension AppFlowCoordinator: MainCoordinatorDependencies {
         DefaultAppleLoginRepository()
     }
     
+    private func makeCCHomeRepository() -> CCHomeRepository {
+        DefaultCCHomeRepository(networkManager: NetworkManager())
+    }
+    
     //MARK: - DataSource
     private func makeCameraPermissionDataSource() -> CameraPermissionDataSource {
         CameraPermissionDataSource()
@@ -139,7 +155,7 @@ extension AppFlowCoordinator: SignInCoordinatorDependencies {
         DefaultSigninViewModel(
             permissionUseCase: makePermissionUseCase(),
             fetchAppVersionUseCase: makeFetchAppVersionUseCase(),
-            socialLoginUseCase: makeSocialLoginUseCase(),
+            socialLoginUseCase: makeLoginUseCase(),
             actions: actions
         )
     }

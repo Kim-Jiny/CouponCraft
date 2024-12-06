@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 
 struct CouponItem: Equatable, Identifiable, Codable {
     typealias Identifier = String

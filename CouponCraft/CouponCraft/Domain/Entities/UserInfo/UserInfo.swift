@@ -9,6 +9,7 @@ import Foundation
 
 struct UserInfoDTO: Codable, Identifiable {
     let id: String  // UUID 또는 서버에서 제공하는 고유 ID
+    let token: String  // 서버 통신에 사용되는 token
     let username: String // 유저가 등록한 닉네임
     let email: String // 이메일 - 로그인할때 필요.
     let loginType: LoginType // "Google", "Apple", "Kakao", "Email" 등
@@ -31,6 +32,7 @@ struct UserInfoDTO: Codable, Identifiable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
         id = try container.decode(String.self, forKey: .id)
+        token = try container.decode(String.self, forKey: .token)
         username = try container.decode(String.self, forKey: .username)
         email = try container.decode(String.self, forKey: .email)
         loginType = try container.decode(LoginType.self, forKey: .loginType)
